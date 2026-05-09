@@ -938,5 +938,5 @@ Groq llama-3.1-8b (current)     FREE               FREE
 
 *End of AWS Bedrock Architecture Document*
 
-*Delta AI Assistant — Built by Hari Kumar*
+*Delta AI Assistant — Built by Hariharan*
 *Architecture: FastAPI + RDS PostgreSQL + ChromaDB + AWS Bedrock (Claude 3 + Titan) + ECS Fargate*
