@@ -81,7 +81,7 @@ def seed_data(db):
 
     customers = [
         Customer(
-            name="Hari Kumar",
+            name="Hariharan",
             email="hari@delta.com",
             password_hash=pwd_context.hash("hari123"),
             tier="Gold",
