@@ -1,6 +1,6 @@
 # Delta Air Lines AI Customer Assistant
 # Complete Technical Architecture & Documentation
-### Author: Hari Kumar | Senior AI Engineering Portfolio Project
+### Author: Hariharan | Senior AI Engineering Portfolio Project
 
 ---
 
@@ -586,7 +586,7 @@ LIMIT 1;
 ```
 Customer {
     id            = 1
-    name          = "Hari Kumar"
+    name          = "Hariharan"
     email         = "hari@delta.com"
     password_hash = "$2b$12$XyZ9abcVeryLongHashString..."
     tier          = "Gold"
@@ -797,7 +797,7 @@ CREATE TABLE customers (
 ```
 id  name            email              tier      miles_balance  member_since
 ──  ──────────────  ─────────────────  ────────  ─────────────  ────────────
-1   Hari Kumar      hari@delta.com     Gold      45230.0        2019-03-15
+1   Hariharan      hari@delta.com     Gold      45230.0        2019-03-15
 2   Priya Sharma    priya@delta.com    Platinum  120500.0       2017-07-22
 3   James Wilson    james@delta.com    Silver    8750.0         2022-01-10
 ```
@@ -813,7 +813,7 @@ SELECT * FROM customers WHERE email = 'hari@delta.com' LIMIT 1;
 
 # Returns a Python object:
 customer.id            → 1
-customer.name          → "Hari Kumar"
+customer.name          → "Hariharan"
 customer.email         → "hari@delta.com"
 customer.password_hash → "$2b$12$XyZ9abc..."
 customer.tier          → "Gold"
@@ -1232,7 +1232,7 @@ build_prompt(
     user_message = "What are the baggage fees?",
     intent       = "baggage",
     customer_context = {
-        "name": "Hari Kumar",
+        "name": "Hariharan",
         "tier": "Gold",
         "miles_balance": 45230,
         "member_since": "2019-03-15"
@@ -1251,7 +1251,7 @@ Builds this message list:
   {
     "role": "user",
     "content": "Customer Information:
-                - Name: Hari Kumar
+                - Name: Hariharan
                 - Tier: Gold
                 - Miles Balance: 45,230 miles
                 - Member Since: 2019-03-15
@@ -1343,7 +1343,7 @@ get_current_user(token, db) runs:
   payload = {"sub": "hari@delta.com", "exp": 1746789600}
   email   = "hari@delta.com"
   customer = db.query(Customer).filter(Customer.email == "hari@delta.com").first()
-  customer = Customer(id=1, name="Hari Kumar", tier="Gold", miles_balance=45230.0...)
+  customer = Customer(id=1, name="Hariharan", tier="Gold", miles_balance=45230.0...)
   return customer
 ```
 
@@ -1353,7 +1353,7 @@ get_current_user(token, db) runs:
 # routers/chat.py
 def chat(request, current_user, db):
     customer_context = {
-        "name":          "Hari Kumar",
+        "name":          "Hariharan",
         "tier":          "Gold",
         "miles_balance": 45230.0,
         "member_since":  "2019-03-15",
@@ -1437,7 +1437,7 @@ rag_context = chunk1 + "\n\n" + chunk2 + "\n\n" + chunk3
 messages = build_prompt(
     user_message     = "How much baggage is allowed for business class?",
     intent           = "baggage",
-    customer_context = {"name": "Hari Kumar", "tier": "Gold", "miles_balance": 45230},
+    customer_context = {"name": "Hariharan", "tier": "Gold", "miles_balance": 45230},
     rag_context      = "<joined chunks>"
 )
 ```
@@ -1451,7 +1451,7 @@ messages = build_prompt(
   },
   {
     "role": "user",
-    "content": "Customer Information:\n- Name: Hari Kumar\n- Tier: Gold\n- Miles Balance: 45,230 miles\n- Member Since: 2019-03-15\n\nRelevant Delta Policy Information:\nFirst checked bag fee for domestic flights: $30 per bag...\n[chunk2]\n[chunk3]\n\nCustomer Question: How much baggage is allowed for business class?"
+    "content": "Customer Information:\n- Name: Hariharan\n- Tier: Gold\n- Miles Balance: 45,230 miles\n- Member Since: 2019-03-15\n\nRelevant Delta Policy Information:\nFirst checked bag fee for domestic flights: $30 per bag...\n[chunk2]\n[chunk3]\n\nCustomer Question: How much baggage is allowed for business class?"
   }
 ]
 ```
@@ -1515,10 +1515,10 @@ token (string)    str               "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 
 jwt_payload       dict              {"sub": "hari@delta.com", "exp": 1746789600}
 
-customer          Customer          .id=1, .name="Hari Kumar", .tier="Gold"
+customer          Customer          .id=1, .name="Hariharan", .tier="Gold"
                   (SQLAlchemy obj)  .miles_balance=45230.0, .email="hari@delta.com"
 
-customer_context  dict              {"name": "Hari Kumar", "tier": "Gold",
+customer_context  dict              {"name": "Hariharan", "tier": "Gold",
                                      "miles_balance": 45230, "member_since": "2019-03-15"}
 
 intent            str               "baggage"

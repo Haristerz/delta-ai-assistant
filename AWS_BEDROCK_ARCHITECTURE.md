@@ -586,7 +586,7 @@ Anthropic Claude 3 Sonnet (running on AWS infrastructure)
          │
          │  Processes your prompt:
          │  system: "You are a Delta assistant..."
-         │  user:   "Customer: Hari Kumar, Gold, 45230 miles
+         │  user:   "Customer: Hariharan, Gold, 45230 miles
          │           Policy: Gold members get 2 free bags...
          │           Question: What are baggage fees?"
          │
@@ -675,7 +675,7 @@ db.query(Customer).filter(email == "hari@delta.com").first()
 SQL: SELECT * FROM customers WHERE email = 'hari@delta.com';
 
 Result:
-  name          = "Hari Kumar"
+  name          = "Hariharan"
   tier          = "Gold"
   miles_balance = 45230.0
   member_since  = 2019-03-15
@@ -739,7 +739,7 @@ messages = [
   {
     "role": "user",
     "content": "Customer Information:
-                - Name: Hari Kumar
+                - Name: Hariharan
                 - Tier: Gold
                 - Miles Balance: 45,230 miles
                 - Member Since: 2019-03-15
