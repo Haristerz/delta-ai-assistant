@@ -1759,5 +1759,5 @@ A: Replace SQLite with Aurora PostgreSQL (auto-scaling). Move ChromaDB to Pineco
 
 *End of Documentation*
 
-*Built by Hari Kumar — AI Engineering Portfolio Project*
+*Built by Hariharan — AI Engineering Portfolio Project*
 *Stack: FastAPI + SQLite + ChromaDB + JWT + Groq LLM + SentenceTransformer + Streamlit*
